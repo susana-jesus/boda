@@ -55,6 +55,55 @@
     }
     .nav a:hover{background:rgba(242,140,40,.12)}
     .nav .spacer{flex:1}
+    
+/* Enlaces en desktop */
+.nav-links{ display:flex; gap:6px; margin-left:auto; }
+.nav-links a{
+  color:var(--ink); text-decoration:none; padding:10px 12px; border-radius:10px; font-weight:500;
+}
+.nav-links a:hover{ background:rgba(242,140,40,.12) }
+
+/* ================= HAMBURGUESA (MÓVIL) ================= */
+.nav-toggle{ display:none; } /* checkbox oculto */
+
+.hamburger{
+  display:none; /* solo visible en móvil */
+  width:40px; height:34px; margin-left:auto;
+  align-items:center; justify-content:center; cursor:pointer;
+  border-radius:10px; padding:6px;
+}
+.hamburger:hover{ background:rgba(242,140,40,.12) }
+.hamburger span{
+  display:block; width:22px; height:2px; background:var(--ink); margin:4px 0; transition:.2s;
+}
+
+/* ===== Comportamiento en móvil ===== */
+@media (max-width: 860px){
+  /* Mostrar botón */
+  .hamburger{ display:flex; }
+
+  /* Colapsar enlaces por defecto */
+  .nav-links{
+    position:absolute; top:100%; right:12px; left:12px;
+    display:flex; flex-direction:column; gap:6px;
+    background:#fff; border:1px solid rgba(0,0,0,.08);
+    border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.08);
+    padding:8px; transform:translateY(-10px); opacity:0; pointer-events:none;
+    transition:opacity .15s ease, transform .15s ease;
+  }
+  .nav-links a{ padding:12px; }
+
+  /* Al activar el checkbox, se abre el menú */
+  .nav-toggle:checked ~ .hamburger + .nav-links{
+    transform:translateY(0); opacity:1; pointer-events:auto;
+  }
+
+  /* Animación del icono al abrir */
+  .nav-toggle:checked + .hamburger span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
+  .nav-toggle:checked + .hamburger span:nth-child(2){ opacity:0; }
+  .nav-toggle:checked + .hamburger span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
+}
+
 
     /* ---------- HERO ---------- */
     /* --- HERO (distribución por áreas) --- */
@@ -249,9 +298,17 @@
 
   <!-- NAV -->
   <nav class="nav" aria-label="Navegación principal">
-    <div class="wrap">
-      <div class="brand">Susana y Jesús</div>
-      <div class="spacer"></div>
+  <div class="wrap">
+    <div class="brand">Susana y Jesús</div>
+
+    <!-- Botón hamburguesa (solo visible en móvil) -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+    <label for="nav-toggle" class="hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <!-- Enlaces del menú -->
+    <div class="nav-links">
       <a href="#intro">Inicio</a>
       <a href="#bigday">El gran día</a>
       <a href="#agenda">Agenda</a>
@@ -259,7 +316,9 @@
       <a href="#rsvp">Formulario</a>
       <a href="#qa">Q&amp;A</a>
     </div>
-  </nav>
+  </div>
+</nav>
+``
 
   <!-- HERO -->
   <header class="hero" id="intro">
@@ -286,7 +345,7 @@
   <img
     class="photo"
     alt="Foto de Susana y Jesús"
-    src="susana-jesus1.jpg">
+    src="susana-jesus.jpg">
 </div>
 </header>
 
