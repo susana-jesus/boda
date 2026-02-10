@@ -57,10 +57,41 @@
     .nav .spacer{flex:1}
 
     /* ---------- HERO ---------- */
-    .hero{
-      max-width:1100px; margin:40px auto 24px; padding:0 18px; display:grid;
-      grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center;
-    }
+    /* --- HERO (distribución por áreas) --- */
+.hero{
+  max-width:1100px; margin:40px auto 24px; padding:0 18px;
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  grid-template-areas: "text photo";
+  gap:28px; align-items:center;
+}
+.hero-text{ grid-area: text; }
+.hero-photo{ grid-area: photo; }
+
+/* La imagen ya tenía tamaño, pero nos aseguramos de que pueda crecer bien */
+.photo{
+  display:block; width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover;
+  border:4px solid #fff; box-shadow:var(--shadow);
+}
+
+/* --- Reordenación y tamaño en MÓVIL --- */
+@media (max-width: 860px){
+  .hero{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "photo";   /* <- fuerza la foto DEBAJO del texto en móvil */
+    gap:18px;
+  }
+  /* Hacemos que la foto ocupe todo el ancho y sea más alta en móvil */
+  .photo{
+    aspect-ratio: 4 / 5;    /* un poco más vertical para lucir más */
+  }
+  /* Un poco menos de padding en la tarjeta de foto para ganar espacio útil */
+  .hero-card{
+    padding:16px;
+  }
+}
    /* === FECHA (amarillo vistoso, acorde al estilo de tus flores) === */
 .date-badge{
   display:inline-block;
@@ -232,33 +263,33 @@
 
   <!-- HERO -->
   <header class="hero" id="intro">
-    <div>
-      <span class="date-badge" aria-label="Fecha de la boda">18 · 07 · 2026</span>
-      <h1>Susana y Jesús</h1>
-      <div class="date">¡Nos casamos!</div>
-      <p class="lead">
-        Sí, sí… <strong>¡NOS CASAMOS!</strong> Y no podemos estar más felices de compartirlo con vosotros.
-        Queremos que forméis parte de este momento que inaugurará una nueva etapa para nosotros. Estamos
-        preparando una boda muy divertida, muy nuestra, y aseguramos que lo vais a pasar increíble.
-      </p>
-      <p class="lead">
-        Mientras llega el gran día, hemos creado esta web para que no os perdáis absolutamente nada y empecéis
-        a sentir desde ya la emoción de lo que se viene… <em>Spoiler: va a ser épico.</em>
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#rsvp">Confirmar asistencia (RSVP)</a>
-        <a class="btn btn-ghost" href="#llegar">Cómo llegar</a>
-      </div>
+  <div class="hero-text">
+    <span class="date-badge" aria-label="Fecha de la boda">18 · 07 · 2026</span>
+    <h1>Susana y Jesús</h1>
+    <div class="date">¡Nos casamos!</div>
+    <p class="lead">
+      Sí, sí… <strong>¡NOS CASAMOS!</strong> Y no podemos estar más felices de compartirlo con vosotros.
+      Queremos que forméis parte de este momento que inaugurará una nueva etapa para nosotros. Estamos
+      preparando una boda muy divertida, muy nuestra, y aseguramos que lo vais a pasar increíble.
+    </p>
+    <p class="lead">
+      Mientras llega el gran día, hemos creado esta web para que no os perdáis absolutamente nada y empecéis
+      a sentir desde ya la emoción de lo que se viene… <em>Spoiler: va a ser épico.</em>
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#rsvp">Confirmar asistencia (RSVP)</a>
+      <a class="btn btn-ghost" href="#llegar">Cómo llegar</a>
     </div>
+  </div>
 
-    <div class="hero-card">
-      <!-- FOTO: sustituye el src cuando la tengáis (por ejemplo /img/susana-jesus.jpg) -->
-      <!-- TODO: cambia 'placeholder' por vuestra foto y elimina la clase "note" si quieres -->
-     <img class="photo"
-     src="https://raw.githubusercontent.com/susana-jesus/boda/main/susana-jesus.jpg" 
-     alt="Foto de Susana y Jesús">
-    </div>
-  </header>
+  <div class="hero-card hero-photo">
+    <!-- Tu <img class="photo ... src="..."> tal como lo tengas ahora -->
+    <!-- Ejemplo:
+    <img class="photo" alt="Foto de Susana y Jesús"
+         src="https://raw.githubusercontent.com/susana-jesus/boda/main/susana-jesus.jpg">
+    -->
+  </div>
+</header>
 
   <!-- EL GRAN DÍA -->
   <section id="bigday">
