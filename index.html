@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Susana & Jesús — 18·07·2026</title>
+  <meta name="description" content="Boda de Susana y Jesús — 18 de julio de 2026. Información, agenda, cómo llegar y confirmación de asistencia (RSVP)." />
+
+  <!-- Tipografías (puedes cambiarlas si quieres) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* 🎨 Paleta solicitada */
+      --green:#3b5d31;   /* verde principal */
+      --orange:#f28c28;  /* naranja */
+      --yellow:#ffd166;  /* amarillo */
+      --ink:#243137;     /* texto principal */
+      --bg:#fffaf2;      /* fondo cálido */
+      --white:#ffffff;
+
+      --radius-xl:22px;
+      --radius-lg:16px;
+      --radius-md:12px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --shadow-soft:0 6px 18px rgba(0,0,0,.06);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 1200px at 10% -10%, rgba(242,140,40,.10), transparent 60%),
+        radial-gradient(1200px 1200px at 110% 10%, rgba(59,93,49,.10), transparent 60%),
+        linear-gradient(180deg, #fff, var(--bg));
+    }
+
+    /* ---------- NAV ---------- */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,255,255,.85);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .nav .wrap{
+      max-width:1100px; margin:auto; display:flex; align-items:center; gap:20px;
+      padding:10px 18px;
+    }
+    .brand{font-family:"Playfair Display",serif; font-weight:700; font-size:22px; color:var(--green); letter-spacing:.2px}
+    .nav a{
+      color:var(--ink); text-decoration:none; padding:10px 12px; border-radius:10px; font-weight:500;
+    }
+    .nav a:hover{background:rgba(242,140,40,.12)}
+    .nav .spacer{flex:1}
+
+    /* ---------- HERO ---------- */
+    .hero{
+      max-width:1100px; margin:40px auto 24px; padding:0 18px; display:grid;
+      grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px;
+      background:linear-gradient(90deg,var(--orange),var(--yellow));
+      color:#1d1d1d; font-weight:600; font-size:14px; box-shadow:var(--shadow-soft);
+    }
+    h1{
+      font-family:"Playfair Display",serif; font-size:54px; line-height:1.1; margin:12px 0 10px; color:var(--green);
+    }
+    .date{
+      font-size:18px; color:#4b5; font-weight:600; letter-spacing:.5px;
+    }
+    .lead{
+      font-size:18px; margin-top:16px;
+    }
+
+    .hero-card{
+      background:var(--white); border-radius:var(--radius-xl); box-shadow:var(--shadow);
+      padding:22px; position:relative; overflow:hidden; border:1px solid rgba(0,0,0,.06);
+    }
+    .hero-card:before{
+      content:""; position:absolute; inset:-30% -30% auto auto; height:220px; width:220px;
+      background:radial-gradient(closest-side, rgba(255,209,102,.5), transparent 60%);
+      border-radius:50%; transform:translate(30%,-30%);
+    }
+    .photo{
+      display:block; width:100%; aspect-ratio:1/1; border-radius:18px; object-fit:cover;
+      border:4px solid #fff; box-shadow:var(--shadow);
+      background:
+        repeating-linear-gradient(45deg, rgba(59,93,49,.12) 0 10px, rgba(242,140,40,.12) 10px 20px, rgba(255,209,102,.12) 20px 30px);
+    }
+    .photo.note{
+      display:grid; place-items:center; color:#6b6b6b; font-weight:500;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section{padding:28px 18px}
+    .container{max-width:1100px; margin:auto}
+    .card{
+      background:var(--white); border:1px solid rgba(0,0,0,.06);
+      border-radius:var(--radius-xl); padding:24px; box-shadow:var(--shadow);
+    }
+    .title{display:flex; align-items:center; gap:10px; margin:0 0 12px}
+    .title .dot{width:12px; height:12px; border-radius:50%; background:var(--orange); box-shadow:0 0 0 6px rgba(242,140,40,.15)}
+    h2{font-family:"Playfair Display",serif; margin:0; font-size:34px; color:var(--green)}
+    h3{font-size:22px; margin:22px 0 10px; color:#233}
+
+    .cols{display:grid; gap:22px}
+    @media(min-width:860px){ .cols{grid-template-columns:1fr 1fr} }
+
+    .pill{
+      display:inline-block; padding:6px 12px; border-radius:999px; font-weight:600;
+      background:rgba(242,140,40,.15); color:#8a4b00; margin-right:8px
+    }
+
+    /* ---------- TIMELINE ---------- */
+    .timeline{position:relative; padding-left:24px; margin:12px 0}
+    .timeline:before{
+      content:""; position:absolute; top:0; bottom:0; left:8px; width:4px; border-radius:4px;
+      background:linear-gradient(var(--orange), var(--yellow));
+    }
+    .item{position:relative; margin:16px 0; padding-left:14px}
+    .item:before{
+      content:""; position:absolute; left:-2px; top:6px; width:14px; height:14px; border-radius:50%;
+      border:3px solid var(--white); background:var(--green); box-shadow:0 0 0 5px rgba(59,93,49,.15);
+    }
+    .time{font-weight:700; color:var(--green)}
+
+    /* ---------- MAPS ---------- */
+    .map{width:100%; height:320px; border:0; border-radius:16px; box-shadow:var(--shadow-soft)}
+    .hint{background:linear-gradient(90deg, rgba(59,93,49,.08), rgba(242,140,40,.08)); padding:12px 14px; border-radius:12px; border:1px dashed rgba(0,0,0,.1); font-size:14px}
+
+    /* ---------- RSVP ---------- */
+    .cta{
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin:10px 0 0;
+    }
+    .btn{
+      appearance:none; border:0; cursor:pointer; font-weight:700; letter-spacing:.3px;
+      padding:12px 16px; border-radius:12px; text-decoration:none; display:inline-flex; align-items:center; gap:10px;
+      box-shadow:var(--shadow-soft);
+    }
+    .btn-primary{ background:linear-gradient(90deg,var(--green), #2e4726); color:#fff }
+    .btn-primary:hover{ filter:brightness(1.05) }
+    .btn-ghost{ background:rgba(242,140,40,.16); color:#7b3f00 }
+    iframe.form{width:100%; min-height:820px; border:0; border-radius:16px; box-shadow:var(--shadow)}
+
+    /* ---------- FOOTER ---------- */
+    footer{
+      padding:40px 18px 60px; text-align:center; color:#314; font-size:15px;
+    }
+    .heart{color:var(--orange)}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <div class="brand">Susana &amp; Jesús</div>
+      <div class="spacer"></div>
+      <a href="#intro">Inicio</a>
+      <a href="#bigday">El gran día</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#llegar">Cómo llegar</a>
+      <a href="#rsvp">Formulario</a>
+      <a href="#qa">Q&amp;A</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="intro">
+    <div>
+      <span class="badge">💍✨ 18 · 07 · 2026</span>
+      <h1>Susana &amp; Jesús</h1>
+      <div class="date">¡Nos casamos! 🎉🥂</div>
+      <p class="lead">
+        Sí, sí… <strong>¡NOS CASAMOS!</strong> Y no podemos estar más felices de compartirlo con vosotros.
+        Queremos que forméis parte de este momento que inaugurará una nueva etapa para nosotros. Estamos
+        preparando una boda muy divertida, muy nuestra, y aseguramos que lo vais a pasar increíble.
+      </p>
+      <p class="lead">
+        Mientras llega el gran día, hemos creado esta web para que no os perdáis absolutamente nada y empecéis
+        a sentir desde ya la emoción de lo que se viene… <em>Spoiler: va a ser épico.</em>
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#rsvp">Confirmar asistencia (RSVP)</a>
+        <a class="btn btn-ghost" href="#llegar">Cómo llegar</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <!-- FOTO: sustituye el src cuando la tengáis (por ejemplo /img/susana-jesus.jpg) -->
+      <!-- TODO: cambia 'placeholder.jpg' por vuestra foto y elimina la clase "note" -->
+      <img class="photo note" alt="Foto de Susana y Jesús (sustituir más adelante)"
+           src=""
+           onerror="this.outerHTML='<div class=&quot;photo note&quot;>📸 Aquí irá vuestra foto<br><small>(sube un archivo y pon su URL en el atributo <em>src</em>)</small></div>'">
+    </div>
+  </header>
+
+  <!-- EL GRAN DÍA -->
+  <section id="bigday">
+    <div class="container card">
+      <div class="title"><span class="dot"></span><h2>El gran día 📍💒</h2></div>
+      <div class="cols">
+        <div>
+          <p>
+            El gran día empezará a las <strong>18:00 h</strong> en la
+            <strong>Parroquia San Manuel y San Benito</strong>, muy cerquita del Parque del Retiro, en pleno centro de Madrid.
+            Jesús estará ya esperando (tranquilo… más o menos) y Susana promete ser una novia muy puntual, entrando a la iglesia a las <strong>18:30 h</strong>.
+          </p>
+          <p>
+            Después, continuamos la celebración en la <strong>finca El Molino del Manto (Chinchón)</strong>, a unos 30 minutos de Madrid.
+            Allí nos espera todo lo bueno: <span class="pill">🍸 Cóctel</span> <span class="pill">🍽 Banquete</span> <span class="pill">🎶 Fiesta</span>.
+          </p>
+          <p>
+            Sabemos que es julio y que el calor puede apretar, pero tranquilos… tenemos sorpresas y planazos para que
+            solo os preocupéis de disfrutar, beber, comer, bailar y pasarlo bien 😎.
+          </p>
+        </div>
+        <div class="hint">
+          💡 Consejo: traed ganas de bailar, cámara lista para inmortalizar momentazos… y una sonrisa enorme.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section id="agenda">
+    <div class="container card">
+      <div class="title"><span class="dot" style="background:var(--green)"></span><h2>Agenda ⏰</h2></div>
+
+      <div class="timeline">
+        <div class="item"><div class="time">18:00 — Llegada de los invitados 🎈</div>
+          <div>Nos vemos en la Parroquia de San Manuel y San Benito (Madrid).</div></div>
+
+        <div class="item"><div class="time">18:30 — Celebración religiosa 💍</div>
+          <div>Damos el gran “sí, quiero”.</div></div>
+
+        <div class="item"><div class="time">19:30 — Transporte a la finca Molino del Manto 🚌</div>
+          <div>Nos subimos al transporte (autobús de la boda o coche particular) y ponemos rumbo a Chinchón.</div></div>
+
+        <div class="item"><div class="time">20:15 — Cóctel 🍹</div>
+          <div>Bebidas fresquitas y aperitivos deliciosos (¡venid con hambre!).</div></div>
+
+        <div class="item"><div class="time">22:00 — Banquete (cena) 🍽✨</div>
+          <div>A sentarse, disfrutar y seguir celebrando.</div></div>
+
+        <div class="item"><div class="time">00:00 — Fiesta 🎉🕺💃</div>
+          <div>A bailar hasta abajo. ¡La noche es nuestra!</div></div>
+
+        <div class="item"><div class="time">05:00 — Despedida y cierre. Transporte de vuelta 🌙🚌</div>
+          <div>Últimos bailes, chupitos y abrazos. Autobús de vuelta o coche particular.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO LLEGAR -->
+  <section id="llegar">
+    <div class="container card">
+      <div class="title"><span class="dot" style="background:var(--yellow)"></span><h2>🚍 Cómo llegar</h2></div>
+
+      <h3>18:00 h · Parroquia San Manuel y San Benito</h3>
+      <p>📍 C. Alcalá, 83, Salamanca, 28009 Madrid</p>
+      <iframe class="map"
+        src="https://www.google.com/maps?q=Parroquia%20San%20Manuel%20y%20San%20Benito%2C%20Calle%20de%20Alcal%C3%A1%2083%2C%20Madrid&output=embed"
+        loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <h3 style="margin-top:26px">20:15 h · Molino del Manto (Chinchón)</h3>
+      <p>📍 Cra. M‑311 km 12,300, 28370 Chinchón (Madrid)</p>
+      <iframe class="map"
+        src="https://www.google.com/maps?q=Molino%20del%20Manto%2C%20Chinch%C3%B3n&output=embed"
+        loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      <h3 style="margin-top:26px">🚌 Autobuses de la boda (RECOMENDADO ⭐)</h3>
+      <p>Habilitaremos autobuses de ida y vuelta desde la iglesia hasta la finca, y también desde Villaviciosa de Odón.
+        <strong>Es imprescindible indicarlo en el formulario</strong>.</p>
+
+      <div class="cols">
+        <div>
+          <h4>➡️ Ida</h4>
+          <ul>
+            <li><strong>17:00 h</strong> · Villaviciosa de Odón → Parroquia San Manuel y San Benito
+              <br><small>(<em>Mapa de la parada — próximamente</em>)</small></li>
+            <li><strong>19:30 h</strong> · Parroquia de San Manuel y San Benito (C/ Velázquez, 2) → Finca Molino del Manto</li>
+          </ul>
+        </div>
+        <div>
+          <h4>⬅️ Vuelta</h4>
+          <ul>
+            <li><strong>03:00 h</strong> · Molino del Manto → Parroquia de San Manuel y San Benito / Villaviciosa de Odón</li>
+            <li><strong>05:00 h</strong> · Molino del Manto → Parroquia de San Manuel y San Benito / Villaviciosa de Odón</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 style="margin-top:16px">🚗 Coche particular</h3>
+      <ul>
+        <li><strong>Parroquia San Manuel y San Benito — Parkings cercanos</strong>:
+          <ul>
+            <li>Interparking Velázquez – Jorge Juan (Calle Velázquez, 14)</li>
+            <li>Parking Serrano – Recoletos (Calle de Serrano, 61)</li>
+            <li>La zona es SER (zona azul / verde).</li>
+          </ul>
+        </li>
+        <li><strong>Molino del Manto</strong>: la finca dispone de parking privado.</li>
+      </ul>
+
+      <div class="hint" style="margin-top:10px">
+        ⚠️ <strong>Importante:</strong> a las 05:00 h es difícil conseguir taxis o VTC en la finca por estar a las afueras de Madrid.
+        No hay transporte público. Recomendamos el uso del <strong>autobús</strong> o vuestro <strong>coche particular</strong>.
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="rsvp">
+    <div class="container card">
+      <div class="title"><span class="dot" style="background:var(--orange)"></span><h2>Formulario</h2></div>
+      <p><strong>¡Queremos contar contigo!</strong> Por favor, completa el formulario de asistencia.</p>
+
+      <!-- TODO: Sustituye la URL por tu Google Form (Archivo → Enviar → Insertar/Embed) -->
+      <iframe class="form"
+        src="https://docs.google.com/forms/d/e/TU_FORM_ID/viewform?embedded=true"
+        loading="lazy">Cargando…</iframe>
+
+      <p class="cta">
+        <!-- Enlace alternativo por si el iframe no carga -->
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/TU_FORM_ID/viewform" target="_blank" rel="noopener">Abrir formulario en pestaña nueva</a>
+        <span>✍️ Preguntas incluidas: asistencia, nº de acompañantes, nombres, alergias/intolerancias, uso de autobús (ida/vuelta y horarios).</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Q&A -->
+  <section id="qa">
+    <div class="container card">
+      <div class="title"><span class="dot" style="background:var(--green)"></span><h2>Sección Q&amp;A</h2></div>
+      <p><em>Falta por completar.</em> Aquí añadiremos detalles útiles conforme se acerque la fecha.</p>
+
+      <h3>Alojamiento</h3>
+      <p><!-- TODO: hoteles recomendados, zonas, códigos de descuento --></p>
+
+      <h3>Transporte</h3>
+      <p><!-- TODO: info ampliada sobre autobuses, puntos de encuentro, aparcamiento --></p>
+
+      <h3>Regalo</h3>
+      <p><!-- TODO: texto sobre lista de boda / detalles / número de cuenta si lo decidís --></p>
+    </div>
+  </section>
+
+  <footer>
+    Con cariño — <strong>Susana &amp; Jesús</strong> · 18 de julio de 2026
+    <div class="heart" aria-hidden="true" style="font-size:20px; margin-top:6px">💛🧡💛</div>
+  </footer>
+
+</body>
+</html>
+``
