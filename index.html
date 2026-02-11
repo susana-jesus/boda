@@ -335,6 +335,23 @@
   .photo{ aspect-ratio: 4 / 5; }  /* conserva tu ajuste móvil para la foto */
   .hero-card{ padding:16px; }     /* conserva tu ajuste móvil para la tarjeta */
 } 
+
+    /* Título sobre la etiqueta floral */
+.kicker{
+  margin: 0 0 10px;
+  text-align: center;
+  color: var(--green);
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 42px;     /* más grande que el texto principal */
+  line-height: 1.15;
+  letter-spacing: .3px;
+}
+
+@media (min-width: 900px){
+  .kicker{ font-size: 48px; }
+}
+    
   </style>
 </head>
 <body>
@@ -361,17 +378,17 @@
     </div>
   </div>
 </nav>
-``
 
   <!-- HERO -->
 <header class="hero" id="intro">
-  <!-- 1) ETIQUETA FLORAL -->
-  <div class="hero-label">
-    <img
-      class="photo etiqueta"
-      alt="Etiqueta floral de la boda de Susana y Jesús"
-      src="etiqueta-boda.png">
-  </div>
+  <!-- 1) ETIQUETA FLORAL + TÍTULO ENCIMA -->
+<div class="hero-label">
+  <h1 class="kicker">¡Nos casamos!</h1>
+  <img
+    class="photo etiqueta"
+    src="etiqueta-boda.png"
+    alt="Etiqueta floral de la boda de Susana y Jesús — 18 de julio de 2026">
+</div>
 
   <!-- 2) TEXTO / DESCRIPCIÓN -->
   <div class="hero-text">
