@@ -357,6 +357,75 @@
   background: var(--orange) !important;
   box-shadow: 0 0 0 6px rgba(242,140,40,.15) !important;
 }    
+/* ======= AUTOBUSES (IDA / VUELTA) ======= */
+.bus-legend{
+  margin: 6px 0 10px;
+}
+
+.bus-grid{
+  display:grid;
+  gap:22px;
+  margin-top:12px;
+}
+@media (min-width: 860px){
+  .bus-grid{
+    grid-template-columns: 1fr 1fr; /* IDA | VUELTA lado a lado en desktop */
+  }
+}
+
+.bus-block{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.bus-title{
+  font-family:"Playfair Display", serif;
+  font-size:24px;
+  margin:0;
+  line-height:1.2;
+}
+.bus-title.ida{ color:var(--green); }
+.bus-title.vuelta{ color:var(--orange); }
+
+.bus-card{
+  display:grid;
+  grid-template-columns: 92px 1fr;
+  gap:14px;
+  padding:16px;
+  border-radius:16px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow: var(--shadow-soft);
+}
+
+.bus-time{
+  align-self:center;
+  text-align:center;
+  min-width:84px;
+  padding:10px 8px;
+  border-radius:12px;
+  font-weight:800;
+  color:#fff;
+  background: linear-gradient(90deg, var(--green), #2f4b27);
+  letter-spacing:.3px;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,.08);
+  font-size:18px;
+}
+
+.bus-info{ display:flex; flex-direction:column; gap:4px; }
+.bus-route{ color:var(--ink); }
+.bus-note{ font-size:14px; color:#555; }
+.bus-note.important{ color:#8a4b00; font-weight:700; }
+
+.bus-tip{
+  background: linear-gradient(90deg, rgba(59,93,49,.08), rgba(242,140,40,.08));
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px dashed rgba(0,0,0,.1);
+  font-size:14px;
+  margin-top: 6px;
+}
     
   </style>
 </head>
@@ -531,46 +600,58 @@
         title="Mapa Molino del Manto"></iframe>
 
       <h3 style="margin-top:26px">Autobuses de la boda (RECOMENDADO ⭐)</h3>
-      <p>Habilitaremos autobuses de ida y vuelta desde la iglesia hasta la finca, y también desde Villaviciosa de Odón.
-        <strong>Es imprescindible indicarlo en el formulario</strong>.</p>
+<p class="bus-legend">
+  Habilitaremos autobuses de ida y vuelta desde la iglesia hasta la finca, y también desde Villaviciosa de Odón.
+  <strong>Es imprescindible indicarlo en el formulario (RSVP)</strong>.
+</p>
 
-      <div class="cols">
-        <div>
-          <h4>➡️ Ida</h4>
-          <ul>
-            <li><strong>17:00 h</strong> · Villaviciosa de Odón → Parroquia San Manuel y San Benito
-              <br><small>(<em>Mapa de la parada — próximamente</em>)</small></li>
-            <li><strong>19:30 h</strong> · Parroquia de San Manuel y San Benito (C/ Velázquez, 2) → Finca Molino del Manto</li>
-          </ul>
-        </div>
-        <div>
-          <h4>⬅️ Vuelta</h4>
-          <ul>
-            <li><strong>03:00 h</strong> · Molino del Manto → Parroquia de San Manuel y San Benito / Villaviciosa de Odón</li>
-            <li><strong>05:00 h</strong> · Molino del Manto → Parroquia de San Manuel y San Benito / Villaviciosa de Odón</li>
-          </ul>
-        </div>
+<div class="bus-grid">
+  <!-- 🚌 IDA -->
+  <section class="bus-block" aria-labelledby="ida-title">
+    <h4 id="ida-title" class="bus-title ida">🚌 IDA</h4>
+
+    <article class="bus-card" aria-label="Salida de Villaviciosa de Odón a la Iglesia">
+      <div class="bus-time">17:00</div>
+      <div class="bus-info">
+        <div class="bus-route"><strong>Villaviciosa de Odón → Parroquia San Manuel y San Benito</strong></div>
+        <div class="bus-note">📍 Punto exacto de recogida — <em>próximamente</em></div>
       </div>
+    </article>
 
-      <h3 style="margin-top:16px">Coche particular</h3>
-      <ul>
-        <li><strong>Parroquia San Manuel y San Benito — Parkings cercanos</strong>:
-          <ul>
-            <li>Interparking Velázquez – Jorge Juan (Calle Velázquez, 14)</li>
-            <li>Parking Serrano – Recoletos (Calle de Serrano, 61)</li>
-            <li>La zona es SER (zona azul / verde).</li>
-          </ul>
-        </li>
-        <li><strong>Molino del Manto</strong>: la finca dispone de parking privado.</li>
-      </ul>
-
-      <div class="hint" style="margin-top:10px">
-        ⚠️ <strong>Importante:</strong> a las 05:00 h es difícil conseguir taxis o VTC en la finca por estar a las afueras de Madrid.
-        No hay transporte público. Recomendamos el uso del <strong>autobús</strong> o vuestro <strong>coche particular</strong>.
+    <article class="bus-card" aria-label="Salida de la Iglesia a Molino del Manto">
+      <div class="bus-time">19:30</div>
+      <div class="bus-info">
+        <div class="bus-route"><strong>Iglesia (C/ Velázquez, 2) → Finca Molino del Manto</strong></div>
       </div>
-    </div>
+    </article>
   </section>
 
+  <!-- 🌙 VUELTA -->
+  <section class="bus-block" aria-labelledby="vuelta-title">
+    <h4 id="vuelta-title" class="bus-title vuelta">🌙 VUELTA</h4>
+
+    <article class="bus-card" aria-label="Vuelta a las 03:00">
+      <div class="bus-time">03:00</div>
+      <div class="bus-info">
+        <div class="bus-route"><strong>Molino del Manto → Parroquia / Villaviciosa de Odón</strong></div>
+      </div>
+    </article>
+
+    <article class="bus-card" aria-label="Vuelta a las 05:00">
+      <div class="bus-time">05:00</div>
+      <div class="bus-info">
+        <div class="bus-route"><strong>Molino del Manto → Parroquia / Villaviciosa de Odón</strong></div>
+        <div class="bus-note important">⚠️ Últimos autobuses</div>
+      </div>
+    </article>
+  </section>
+</div>
+
+<!-- Nota contextual (coherente con el mensaje que ya tenías al final de la sección) -->
+<p class="bus-tip">
+  ⚠️ <strong>Importante:</strong> a las 05:00 h es difícil conseguir taxis o VTC en la finca por estar a las afueras de Madrid.
+  Recomendamos el uso del <strong>autobús</strong> o vuestro <strong>coche particular</strong>.
+</p>
   <!-- FORMULARIO -->
   <section id="rsvp">
     <div class="container card">
