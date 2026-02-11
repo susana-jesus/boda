@@ -426,6 +426,42 @@
   font-size:14px;
   margin-top: 6px;
 }
+    /* ===== AUTOBUSES: ajustes visuales solicitados ===== */
+
+/* Títulos: ambos en verde */
+.bus-title.ida,
+.bus-title.vuelta{
+  color: var(--green);
+}
+
+/* Tarjeta: un poco más compacta */
+.bus-card{
+  grid-template-columns: 78px 1fr;    /* más estrecha la columna de hora */
+  padding: 12px;                      /* menos padding */
+  gap: 12px;                          /* menos separación */
+}
+
+/* Hora: más pequeña y naranja clarito */
+.bus-time{
+  font-size: 16px;                    /* antes 18px */
+  padding: 8px 6px;                   /* más contenido */
+  min-width: 70px;                    /* pill más pequeño */
+  border-radius: 10px;
+  color: #7b3f00;                     /* texto marrón cálido para contraste */
+  background: #ffe7c7;                /* naranja MUY clarito */
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.06);
+  letter-spacing: .2px;
+}
+
+/* Tipografía interior un pelín más recogida */
+.bus-info{ gap: 2px; }
+.bus-route{ font-size: 15px; }
+.bus-note{ font-size: 13px; }
+
+/* En escritorio, también más compacto el grid general */
+@media (min-width: 860px){
+  .bus-grid{ gap: 18px; }
+}
     
   </style>
 </head>
@@ -598,8 +634,7 @@
       <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps?q=Molino%20del%20Manto%2C%20Chinch%C3%B3n&output=embed"
         title="Mapa Molino del Manto"></iframe>
-
-      <h3 style="margin-top:26px">Autobuses de la boda (RECOMENDADO ⭐)</h3>
+<h3 style="margin-top:26px">Autobuses de la boda (RECOMENDADO ⭐)</h3>
 <p class="bus-legend">
   Habilitaremos autobuses de ida y vuelta desde la iglesia hasta la finca, y también desde Villaviciosa de Odón.
   <strong>Es imprescindible indicarlo en el formulario (RSVP)</strong>.
@@ -647,11 +682,26 @@
   </section>
 </div>
 
-<!-- Nota contextual (coherente con el mensaje que ya tenías al final de la sección) -->
 <p class="bus-tip">
   ⚠️ <strong>Importante:</strong> a las 05:00 h es difícil conseguir taxis o VTC en la finca por estar a las afueras de Madrid.
   Recomendamos el uso del <strong>autobús</strong> o vuestro <strong>coche particular</strong>.
 </p>
+
+<!-- === COCHE PARTICULAR (restaurado) === -->
+<h3 style="margin-top:16px">Coche particular</h3>
+<ul>
+  <li><strong>Parroquia San Manuel y San Benito — Parkings cercanos</strong>:
+    <ul>
+      <li>Interparking Velázquez – Jorge Juan (Calle Velázquez, 14)</li>
+      <li>Parking Serrano – Recoletos (Calle de Serrano, 61)</li>
+      <li>La zona es SER (zona azul / verde).</li>
+    </ul>
+  </li>
+  <li><strong>Molino del Manto</strong>: la finca dispone de parking privado.</li>
+</ul>
+     </div>  <!-- .container.card -->
+</section> <!-- #llegar -->
+
   <!-- FORMULARIO -->
   <section id="rsvp">
     <div class="container card">
