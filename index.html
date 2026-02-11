@@ -292,6 +292,49 @@
       padding:40px 18px 60px; text-align:center; color:#314; font-size:15px;
     }
     .heart{color:var(--orange)}
+
+/* ====== LAYOUT DEL HERO EN 3 ÁREAS (label, text, photo) ====== */
+.hero{
+  /* dejamos tus valores base, pero redefinimos la rejilla y el orden */
+  max-width:1100px; margin:40px auto 24px; padding:0 18px;
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  grid-template-areas:
+    "label photo"
+    "text  photo";
+  gap:28px; align-items:center;
+}
+
+/* Mapeo de áreas */
+.hero-label{ grid-area: label; }
+.hero-text{  grid-area: text;  }
+.hero-photo{ grid-area: photo; }
+
+/* Imagen de la ETIQUETA floral (sin bordes/sombras ni patrón) */
+.photo.etiqueta{
+  background:none;
+  border:0;
+  box-shadow:none;
+  aspect-ratio:auto;
+  width:100%;
+  max-width:520px;
+  margin-inline:auto;
+  display:block;
+}
+
+/* Orden en MÓVIL: 1) etiqueta 2) texto 3) foto */
+@media (max-width: 860px){
+  .hero{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "label"
+      "text"
+      "photo";
+    gap:18px;
+  }
+  .photo{ aspect-ratio: 4 / 5; }  /* conserva tu ajuste móvil para la foto */
+  .hero-card{ padding:16px; }     /* conserva tu ajuste móvil para la tarjeta */
+} 
   </style>
 </head>
 <body>
@@ -321,11 +364,18 @@
 ``
 
   <!-- HERO -->
-  <header class="hero" id="intro">
+<header class="hero" id="intro">
+  <!-- 1) ETIQUETA FLORAL -->
+  <div class="hero-label">
+    <img
+      class="photo etiqueta"
+      alt="Etiqueta floral de la boda de Susana y Jesús"
+      src="etiqueta-boda.png">
+  </div>
+
+  <!-- 2) TEXTO / DESCRIPCIÓN -->
   <div class="hero-text">
-    <span class="date-badge" aria-label="Fecha de la boda">18 · 07 · 2026</span>
-    <h1>Susana y Jesús</h1>
-    <div class="date">¡Nos casamos!</div>
+    <!-- Eliminados: date-badge, h1 y .date -->
     <p class="lead">
       Sí, sí… <strong>¡NOS CASAMOS!</strong> Y no podemos estar más felices de compartirlo con vosotros.
       Queremos que forméis parte de este momento que inaugurará una nueva etapa para nosotros. Estamos
@@ -341,12 +391,13 @@
     </div>
   </div>
 
-<div class="hero-card hero-photo">
-  <img
-    class="photo"
-    alt="Foto de Susana y Jesús"
-    src="susana-jesus.jpg">
-</div>
+  <!-- 3) FOTO DE SUSANA Y JESÚS -->
+  <div class="hero-card hero-photo">
+    <img
+      class="photo"
+      alt="Foto de Susana y Jesús"
+      src="susana-jesus.jpg">
+  </div>
 </header>
 
   <!-- EL GRAN DÍA -->
