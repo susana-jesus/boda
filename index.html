@@ -351,6 +351,12 @@
 @media (min-width: 900px){
   .kicker{ font-size: 48px; }
 }
+
+/* Forzar los dots de título a naranja en todas las secciones */
+.title .dot{
+  background: var(--orange) !important;
+  box-shadow: 0 0 0 6px rgba(242,140,40,.15) !important;
+}    
     
   </style>
 </head>
@@ -394,14 +400,14 @@
   <div class="hero-text">
     <!-- Eliminados: date-badge, h1 y .date -->
     <p class="lead">
-      Sí, sí… <strong>¡NOS CASAMOS!</strong> Y no podemos estar más felices de compartirlo con vosotros.
-      Queremos que forméis parte de este momento que inaugurará una nueva etapa para nosotros. Estamos
-      preparando una boda muy divertida, muy nuestra, y aseguramos que lo vais a pasar increíble.
-    </p>
-    <p class="lead">
-      Mientras llega el gran día, hemos creado esta web para que no os perdáis absolutamente nada y empecéis
-      a sentir desde ya la emoción de lo que se viene… <em>Spoiler: va a ser épico.</em>
-    </p>
+  Sí, sí… <strong>¡NOS CASAMOS!</strong> ✨ Y no podemos estar más <strong>felices</strong> de compartirlo con vosotros.
+  Queremos que forméis parte de este momento que inaugurará una nueva etapa para nosotros. Estamos
+  preparando una boda muy <strong>divertida</strong>, muy nuestra, y aseguramos que lo vais a pasar <strong>increíble</strong>.
+</p>
+<p class="lead">
+  Mientras llega el gran día, hemos creado esta web para que no os perdáis absolutamente nada y empecéis
+  a sentir desde ya la emoción de lo que se viene… <em>Spoiler: va a ser <strong>épico</strong></em> 🎉
+</p>
     <div class="cta">
       <a class="btn btn-primary" href="#rsvp">Confirmar asistencia (RSVP)</a>
       <a class="btn btn-ghost" href="#llegar">Cómo llegar</a>
@@ -418,31 +424,29 @@
 </header>
 
   <!-- EL GRAN DÍA -->
-  <section id="bigday">
-    <div class="container card">
-      <div class="title"><span class="dot"></span><h2>El gran día</h2></div>
-      <div class="cols">
-        <div>
-          <p>
-            El gran día empezará a las <strong>18:00 h</strong> en la
-            <strong>Parroquia San Manuel y San Benito</strong>, muy cerquita del Parque del Retiro, en pleno centro de Madrid.
-            Jesús estará ya esperando (tranquilo… más o menos) y Susana promete ser una novia muy puntual, entrando a la iglesia a las <strong>18:30 h</strong>.
-          </p>
-          <p>
-            Después, continuamos la celebración en la <strong>finca El Molino del Manto (Chinchón)</strong>, a unos 30 minutos de Madrid.
-            Allí nos espera todo lo bueno: <span class="pill">🍸 Cóctel</span> <span class="pill">🍽 Banquete</span> <span class="pill">🎶 Fiesta</span>.
-          </p>
-          <p>
-            Sabemos que es julio y que el calor puede apretar, pero tranquilos… tenemos sorpresas y planazos para que
-            solo os preocupéis de disfrutar, beber, comer, bailar y pasarlo bien 😎.
-          </p>
-        </div>
-        <div class="hint">
-          💡 Consejo: traed ganas de bailar, cámara lista para inmortalizar momentazos… y una sonrisa enorme.
-        </div>
+ <section id="bigday">
+  <div class="container card">
+    <div class="title"><span class="dot"></span><h2>El gran día</h2></div>
+    <div class="cols">
+      <div>
+        <p>
+          El gran día empezará a las <strong>18:00 h</strong> en la
+          <strong>Parroquia San Manuel y San Benito</strong>, muy cerquita del Parque del Retiro, en pleno centro de Madrid.
+          Jesús estará ya esperando (tranquilo… más o menos) y Susana promete ser una novia muy puntual, entrando a la iglesia a las <strong>18:30 h</strong>.
+        </p>
+        <p>
+          Después, continuamos la celebración en la <strong>finca El Molino del Manto (Chinchón)</strong>, a unos 30 minutos de Madrid.
+          Allí nos espera todo lo bueno: <span class="pill">🍸 Cóctel</span> <span class="pill">🍽 Banquete</span> <span class="pill">🎶 Fiesta</span>.
+        </p>
+        <!-- Eliminado el tercer párrafo (Consejo desaparece por completo) -->
+      </div>
+      <div class="hint">
+        Sabemos que es julio y que el calor puede apretar, pero tranquilos… tenemos sorpresas y planazos para que
+        solo os preocupéis de disfrutar, beber, comer, bailar y pasarlo bien 😎.
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- AGENDA (nueva) -->
   <section id="agenda">
