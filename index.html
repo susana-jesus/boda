@@ -640,6 +640,49 @@ a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
   outline-offset: 3px;
   border-radius: 10px;
 }
+    /* =======================================================
+   NAV · Color flor amarilla de la etiqueta
+   ======================================================= */
+
+.nav{
+  background: linear-gradient(90deg, #F3B35A, #E8A23F);
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  backdrop-filter: none;
+}
+
+/* Marca y enlaces */
+.brand{
+  color: #ffffff !important;
+}
+
+.nav a{
+  color: #ffffff !important;
+}
+
+.nav a:hover{
+  background: rgba(255,255,255,.18) !important;
+}
+
+/* Icono hamburguesa */
+.hamburger span{
+  background: #ffffff !important;
+}
+
+/* Menú desplegable en móvil */
+@media (max-width: 860px){
+  .nav-links{
+    background: linear-gradient(90deg, #F3B35A, #E8A23F) !important;
+    border: 1px solid rgba(0,0,0,.12) !important;
+  }
+
+  .nav-links a{
+    color: #ffffff !important;
+  }
+
+  .nav-links a:hover{
+    background: rgba(255,255,255,.18) !important;
+  }
+}
   </style>
   
 </head>
@@ -744,7 +787,7 @@ a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
         <li class="agenda-item">
           <span class="agenda-time">18:00</span>
           <div class="agenda-content">
-            <div class="agenda-title">Llegada de los invitados 🎈</div>
+            <div class="agenda-title">Llegada de los invitados ⛪</div>
             <div class="agenda-desc">Nos vemos en la Parroquia de San Manuel y San Benito (Madrid).</div>
           </div>
         </li>
