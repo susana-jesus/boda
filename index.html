@@ -600,6 +600,46 @@ iframe.form{
 .rsvp-callout-hero strong{
   color: var(--green);
 }
+    /* === NAV: fondo naranja fuerte y texto blanco (override seguro) === */
+
+/* Barra sticky en naranja (desktop y móvil) */
+.nav{
+  background: linear-gradient(90deg, #f28c28, #e5790a); /* naranja -> naranja algo más oscuro */
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  backdrop-filter: none; /* ya no necesitamos blur sobre blanco */
+}
+
+/* Marca y enlaces en blanco para contraste */
+.brand{ color:#ffffff !important; }
+.nav a{ color:#ffffff !important; }
+.nav a:hover{
+  background: rgba(255,255,255,.15) !important;  /* highlight suave al pasar el ratón */
+}
+
+/* Icono hamburguesa en blanco */
+.hamburger span{ background:#ffffff !important; }
+
+/* Menú desplegable (vista móvil) con fondo naranja y bordes suaves */
+@media (max-width: 860px){
+  .nav-links{
+    background: linear-gradient(90deg, #f28c28, #e5790a) !important;
+    border: 1px solid rgba(0,0,0,.12) !important;
+  }
+  .nav-links a{
+    color:#ffffff !important;
+    border-radius:10px;
+  }
+  .nav-links a:hover{
+    background: rgba(255,255,255,.15) !important;
+  }
+}
+
+/* Aseguramos foco accesible visible sobre fondo naranja */
+a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
   </style>
   
 </head>
@@ -658,7 +698,6 @@ iframe.form{
 </div>
     <div class="cta">
       <a class="btn btn-primary" href="#rsvp">Confirmar asistencia (RSVP)</a>
-      <a class="btn btn-ghost" href="#llegar">Cómo llegar</a>
     </div>
   </div>
 
