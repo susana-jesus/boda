@@ -585,6 +585,21 @@ iframe.form{
 .rsvp-callout strong{
   color: var(--green);
 }
+    /* Aviso destacado en el hero, antes del botón de RSVP */
+.rsvp-callout-hero{
+  background: #fff7e9; /* fondo cálido */
+  border: 1px solid rgba(242,140,40,.35); /* naranja suave */
+  color: #5a2e00; /* marrón cálido para texto */
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: var(--shadow-soft);
+  margin: 8px 0 12px; /* un poco de aire respecto a los párrafos y los botones */
+}
+
+.rsvp-callout-hero strong{
+  color: var(--green);
+}
   </style>
   
 </head>
@@ -638,6 +653,9 @@ iframe.form{
   Mientras llega el gran día, hemos creado esta web para que no os perdáis absolutamente nada y empecéis
   a sentir desde ya la emoción de lo que se viene… <em>Spoiler: va a ser <strong>épico</strong></em> 🎉
 </p>
+    <div class="rsvp-callout-hero" role="note" aria-label="Recordatorio de confirmación">
+  🥂✨ Es muy importante que <strong>confirmes tu asistencia</strong>, ya que nos ayudará a organizarlo todo mucho mejor.
+</div>
     <div class="cta">
       <a class="btn btn-primary" href="#rsvp">Confirmar asistencia (RSVP)</a>
       <a class="btn btn-ghost" href="#llegar">Cómo llegar</a>
@@ -835,13 +853,7 @@ iframe.form{
 <section id="rsvp">
   <div class="container card">
     <div class="title"><span class="dot" style="background:var(--orange)"></span><h2>Formulario</h2></div>
-    <p><strong>¡Queremos contar contigo!</strong> Por favor, completa el formulario de asistencia.</p>
-<div class="rsvp-callout">
-  <strong>💌 Importante</strong><br>
-  Para organizar autobuses, mesas y menús, es
-  <strong>imprescindible</strong> que rellenes este formulario.
-  ¡Gracias por ayudarnos a que todo salga perfecto! ✨
-</div>
+    
     
     <!-- Google Forms incrustado -->
     <iframe
