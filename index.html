@@ -683,6 +683,62 @@ a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
     background: rgba(255,255,255,.18) !important;
   }
 }
+    /* === NAV: volver al estilo original (fondo blanco, texto verde) === */
+.nav{
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.brand{ color: var(--green) !important; }
+
+.nav a{
+  color: var(--green) !important;
+}
+
+.nav a:hover{
+  background: rgba(242,140,40,.12); /* tu hover suave original */
+}
+    /* === Botón hamburguesa con fondo amarillo (desktop y móvil) === */
+.hamburger{
+  background: linear-gradient(135deg, #F3B35A, #E8A23F);
+  border-radius: 12px;
+  padding: 6px;           /* ya lo tienes, se mantiene */
+  /* aseguramos contraste de las rayitas */
+}
+.hamburger span{
+  background: var(--green);  /* líneas verdes como el resto de la web */
+}
+
+/* Hover un pelín más claro, sutil */
+.hamburger:hover{
+  background: linear-gradient(135deg, #F7C77A, #F3B35A);
+}
+
+/* Cuando el menú está abierto (checkbox activo), mantenemos el mismo fondo */
+.nav-toggle:checked + .hamburger{
+  background: linear-gradient(135deg, #F3B35A, #E8A23F);
+}
+
+/* Menú desplegable en móvil: fondo blanco, como el estilo original */
+@media (max-width: 860px){
+  .nav-links{
+    background:#ffffff !important;
+    border:1px solid rgba(0,0,0,.08) !important;
+  }
+  .nav-links a{
+    color: var(--green) !important;
+  }
+  .nav-links a:hover{
+    background: rgba(242,140,40,.12) !important;
+  }
+}
+    /* Enfoque accesible para teclado (tab) */
+a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
+  outline: 3px solid var(--orange);  /* contorno visible */
+  outline-offset: 3px;
+  border-radius: 10px;
+}
   </style>
   
 </head>
