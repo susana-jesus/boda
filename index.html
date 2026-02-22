@@ -15,7 +15,7 @@
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <>
+  <style>
     :root{
       /* 🎨 Paleta solicitada */
       --green:#3b5d31;   /* verde principal */
@@ -237,7 +237,7 @@
 
     /* ---------- AGENDA NUEVA (sin puntos que pisan) ---------- */
     .agenda-list{
-      list-:none; padding:0; margin:8px 0 0;
+      list-style:none; padding:0; margin:8px 0 0;
       display:grid; gap:12px;
     }
     .agenda-item{
@@ -558,34 +558,6 @@ iframe.form{
 @media (max-width: 860px){
   [id]{ scroll-margin-top: 94px; } /* sube/baja hasta que los títulos caigan perfectos */
 }
-
-/* 1) Haz que el iframe ocupe solo lo necesario, sin huecos extra */
-iframe.form{
-  display: block;          /* evita el “gap” de elementos inline */
-  width: 100%;
-  min-height: 980px;       /* prueba 950–1050 según lo que ocupe tu Google Form real */
-  border: 0;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  margin-bottom: 12px;     /* deja un pequeño respiro, no más */
-}
-
-/* 2) Reduce el padding inferior del section del formulario (si lo ves muy alto) */
-section#rsvp{
-  padding-bottom: 18px;    /* por defecto tienes 28px; bájalo un poco */
-}
-
-/* 3) Reduce el padding inferior de la tarjeta (también ayuda) */
-#rsvp .container.card{
-  padding-bottom: 18px;
-}
-
-/* 4) El bloque de call-to-action (botón) sin margen extra debajo */
-#rsvp .cta{
-  margin-bottom: 0;
-}
-
-        
   </style>
   
 </head>
@@ -849,12 +821,13 @@ section#rsvp{
       Cargando…
     </iframe>
 
-   <p class="cta">
-  <a class="btn btn-ghost" target="_blank" rel="noopener"
-     href="https://docs.google.com/forms/d/e/1FAIpQLScW5m6xyDZOTLDwripBRciXHTbL-v6keBF8ZK4qZae8VF7_YQ/viewform">
-    Abrir formulario en pestaña nueva
-  </a>
-</p>
+    <p class="cta">
+      <a class="btn btn-ghost" target="_blank" rel="noopener"
+         href="https://docs.google.com/forms/d/e/1FAIpQLScW5m6xyDZOTLDwripBRciXHTbL-v6keBF8ZK4qZae8VF7_YQ/viewform">
+        Abrir formulario en pestaña nueva
+      </a>
+      <span>✍️ Incluye asistencia, acompañantes, nombres, alergias/intolerancias y autobús (ida/vuelta y horarios).</span>
+    </p>
   </div>
 </section>
 
