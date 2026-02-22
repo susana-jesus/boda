@@ -545,7 +545,7 @@
 /* Altura del Google Form incrustado */
 iframe.form{
   width:100%;
-  min-height: 700px;   /* prueba 1100–1300px según lo largo que sea el form */
+  min-height: 650px;   /* prueba 1100–1300px según lo largo que sea el form */
   border:0;
   border-radius:16px;
   box-shadow:var(--shadow);
@@ -557,6 +557,33 @@ iframe.form{
 
 @media (max-width: 860px){
   [id]{ scroll-margin-top: 94px; } /* sube/baja hasta que los títulos caigan perfectos */
+}
+    /* Badge pequeño en el menú */
+.nav-badge{
+  display:inline-block;
+  margin-left:6px;
+  padding:2px 8px;
+  font-size:11px;
+  font-weight:800;
+  color:#7b3f00;
+  background:linear-gradient(90deg,#ffd9a6,#ffc477);
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.06);
+  vertical-align:middle;
+}
+    /* Callout destacado del formulario */
+.rsvp-callout{
+  background: linear-gradient(90deg, rgba(59,93,49,.08), rgba(242,140,40,.12));
+  border:1px dashed rgba(0,0,0,.12);
+  border-radius:12px;
+  padding:12px 14px;
+  margin:10px 0 12px;
+  font-weight:600;
+  color:#2f3a34;
+}
+
+.rsvp-callout strong{
+  color: var(--green);
 }
   </style>
   
@@ -580,7 +607,9 @@ iframe.form{
       <a href="#bigday">El gran día</a>
       <a href="#agenda">Agenda</a>
       <a href="#llegar">Cómo llegar</a>
-      <a href="#rsvp">Formulario</a>
+      <a href="#rsvp">
+  Formulario <span class="nav-badge">Imprescindible</span>
+</a>
       <a href="#qa">Q&amp;A</a>
     </div>
   </div>
@@ -779,17 +808,13 @@ iframe.form{
       <div class="bus-time">05:00</div>
       <div class="bus-info">
         <div class="bus-route"><strong>Finca Molino del Manto → Parroquia SMySB / Villaviciosa</strong></div>
-        <div class="bus-note important">⚠️ Últimos autobuses</div>
       </div>
     </article>
 
   </section>
 </div>
 
-<p class="bus-tip">
-  ⚠️ <strong>Importante:</strong> a las 05:00 h es muy difícil conseguir taxis o VTC desde la finca por estar a las afueras.
-  Recomendamos usar el <strong>autobús</strong> o vuestro <strong>coche particular</strong>.
-</p>
+
 
 <!-- === COCHE PARTICULAR (restaurado) === -->
 <h3 style="margin-top:16px">Coche particular</h3>
@@ -811,7 +836,13 @@ iframe.form{
   <div class="container card">
     <div class="title"><span class="dot" style="background:var(--orange)"></span><h2>Formulario</h2></div>
     <p><strong>¡Queremos contar contigo!</strong> Por favor, completa el formulario de asistencia.</p>
-
+<div class="rsvp-callout">
+  <strong>💌 Importante</strong><br>
+  Para organizar autobuses, mesas y menús, es
+  <strong>imprescindible</strong> que rellenes este formulario.
+  ¡Gracias por ayudarnos a que todo salga perfecto! ✨
+</div>
+    
     <!-- Google Forms incrustado -->
     <iframe
       class="form"
@@ -826,7 +857,6 @@ iframe.form{
          href="https://docs.google.com/forms/d/e/1FAIpQLScW5m6xyDZOTLDwripBRciXHTbL-v6keBF8ZK4qZae8VF7_YQ/viewform">
         Abrir formulario en pestaña nueva
       </a>
-      <span>✍️ Incluye asistencia, acompañantes, nombres, alergias/intolerancias y autobús (ida/vuelta y horarios).</span>
     </p>
   </div>
 </section>
