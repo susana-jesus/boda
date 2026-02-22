@@ -6,6 +6,12 @@
   <title>Susana y Jesús — 18·07·2026</title>
   <meta name="description" content="Boda de Susana y Jesús — 18 de julio de 2026. Información, agenda, cómo llegar y confirmación de asistencia (RSVP)." />
 
+
+  <!-- Boost: preconexión a Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  
   <!-- Tipografías -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -534,8 +540,26 @@
   .timeline .agenda-item{ padding: 10px 0; gap: 12px; }
   .timeline .agenda-time::after{ width: 12px; height: 12px; }
 }
+
     
+/* Altura del Google Form incrustado */
+iframe.form{
+  width:100%;
+  min-height: 1100px;   /* prueba 1100–1300px según lo largo que sea el form */
+  border:0;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+} 
+    /* Evita que el ancla quede oculta bajo la barra de navegación sticky */
+[id]{
+  scroll-margin-top: 84px;  /* ajusta si tu nav es más alta */
+}
+
+@media (max-width: 860px){
+  [id]{ scroll-margin-top: 94px; } /* sube/baja hasta que los títulos caigan perfectos */
+}
   </style>
+  
 </head>
 <body>
 
@@ -783,23 +807,29 @@
 </section> <!-- #llegar -->
 
   <!-- FORMULARIO -->
-  <section id="rsvp">
-    <div class="container card">
-      <div class="title"><span class="dot" style="background:var(--orange)"></span><h2>Formulario</h2></div>
-      <p><strong>¡Queremos contar contigo!</strong> Por favor, completa el formulario de asistencia.</p>
+<section id="rsvp">
+  <div class="container card">
+    <div class="title"><span class="dot" style="background:var(--orange)"></span><h2>Formulario</h2></div>
+    <p><strong>¡Queremos contar contigo!</strong> Por favor, completa el formulario de asistencia.</p>
 
-      <!-- TODO: Sustituye la URL por tu Google Form (Enviar → < > Insertar) -->
-      <iframe class="form" loading="lazy"
-        src="https://docs.google.com/forms/d/e/TU_FORM_ID/viewform?embedded=true"
-        title="Formulario de confirmación (RSVP)">Cargando…</iframe>
+    <!-- Google Forms incrustado -->
+    <iframe
+      class="form"
+      loading="lazy"
+      src="https://docs.google.com/forms/d/e/1FAIpQLScW5m6xyDZOTLDwripBRciXHTbL-v6keBF8ZK4qZae8VF7_YQ/viewform?embedded=true"
+      title="Formulario de confirmación (RSVP)">
+      Cargando…
+    </iframe>
 
-      <p class="cta">
-        <a class="btn btn-ghost" target="_blank" rel="noopener"
-           href="https://docs.google.com/forms/d/e/TU_FORM_ID/viewform">Abrir formulario en pestaña nueva</a>
-        <span>✍️ Preguntas incluidas: asistencia, nº de acompañantes, nombres, alergias/intolerancias, uso de autobús (ida/vuelta y horarios).</span>
-      </p>
-    </div>
-  </section>
+    <p class="cta">
+      <a class="btn btn-ghost" target="_blank" rel="noopener"
+         href="https://docs.google.com/forms/d/e/1FAIpQLScW5m6xyDZOTLDwripBRciXHTbL-v6keBF8ZK4qZae8VF7_YQ/viewform">
+        Abrir formulario en pestaña nueva
+      </a>
+      <span>✍️ Incluye asistencia, acompañantes, nombres, alergias/intolerancias y autobús (ida/vuelta y horarios).</span>
+    </p>
+  </div>
+</section>
 
   <!-- Q&A -->
   <section id="qa">
