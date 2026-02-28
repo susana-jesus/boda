@@ -902,6 +902,54 @@ a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
     flex-shrink: 0;
   }
 }
+    .iban-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f9f3e6;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  margin: 15px auto;
+  max-width: calc(100% - 24px);
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.iban-number {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #333;
+  word-break: break-all;
+  min-width: 0;
+  flex-shrink: 1;
+  font-size: 13px;
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  padding: 2px 4px;
+}
+
+@media (max-width: 480px) {
+  .iban-container {
+    gap: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    margin: 10px auto;
+    max-width: calc(100% - 20px);
+  }
+
+  .iban-number {
+    font-size: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  .copy-btn {
+    padding: 2px 4px;
+  }
+}
   </style>
   
 </head>
