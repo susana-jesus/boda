@@ -878,6 +878,30 @@ a:focus-visible, .btn:focus-visible, .hamburger:focus-visible{
 .copy-btn {
   flex-shrink: 0;
 }
+    @media (max-width: 480px) {
+  .iban-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 12px;
+    font-size: 13px;
+    margin: 15px 0;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .iban-number {
+    letter-spacing: 0.5px;
+    word-break: break-word;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+  }
+}
   </style>
   
 </head>
